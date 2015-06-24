@@ -23,7 +23,7 @@ angular.module('inventoryControl.productDetails', [])
 
   $scope.addOne = function(product){
     product.qty += 1;
-    products.$save(product);
+    products.$save($scope.product);
   }
 
   $scope.minusOne = function(product){

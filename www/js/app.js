@@ -11,7 +11,8 @@ angular.module('inventoryControl', [
   'inventoryControl.inventory',
   'inventoryControl.services',
   'inventoryControl.newProduct',
-  'inventoryControl.productDetails'
+  'inventoryControl.productDetails',
+  'inventoryControl.productEdit'
   ])
 
 .run(function($ionicPlatform) {
@@ -64,6 +65,16 @@ angular.module('inventoryControl', [
       }
     },
     controller: 'ProductDetailCtrl'
+  })
+
+  .state('app.product-edit', {
+    url: "/product/edit/:id",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/product-edit.html"
+      }
+    },
+    controller: 'ProductEditCtrl'
   })
 
 
