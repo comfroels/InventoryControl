@@ -1,0 +1,36 @@
+<ion-view ng-controller="ProductDetailCtrl" view-title="Product Details">
+  <ion-content class="has-header">
+    <div class="list card">
+      <div class="item item-avatar">
+          <img ng-src="{{product.img}}" alt="">
+          <h2>{{product.name}}</h2>
+          <p>{{product.dsc}}</p>
+      </div>
+      <div class="item item-divider">
+        <div class="row">
+          <div class="col col-center">
+
+            <div class="button-bar">
+              <a class="button button-icon ion-plus-circled" ng-click="addOne(product);"></a>
+              <h4 class="text-center">Qty: {{product.qty}}</h4>
+              <a class="button button-icon ion-minus-circled" ng-click="minusOne(product);"></a>
+            </div>
+          </div>
+          <div class="col">
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="item item-image">
+        <img ng-src="{{product.img}}" alt="">
+      </div>
+
+      <div class="item item-divider">
+        <button class="button button-outline button-assertive icon-left ion-close-circled" ng-click="deleteProduct(product)">Remove Item</button>
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>

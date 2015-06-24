@@ -1,0 +1,19 @@
+<ion-view ng-controller="InventoryCtrl" view-title="Inventory">
+  <ion-content class="has-header">
+    <div class="list">
+      <a class="item" ng-href="#/app/product/{{product.$id}}" ng-repeat="product in products">
+        <div class="row">
+          <div class="col col-40 col-center item-thumbnail-left">
+            <img ng-src="{{product.img}}" alt="">
+          </div>
+          <div class="col col-center">
+            <h2>{{product.name}}</h2>
+          </div>
+          <div class="col col-10 col-center">
+            <i class="icon ion-arrow-right-b"></i>
+          </div>
+        </div>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>
