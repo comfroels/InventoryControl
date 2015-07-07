@@ -1,4 +1,8 @@
 <ion-view ng-controller="ProductDetailCtrl" view-title="Product Details">
+  <ion-nav-buttons side="left">
+    <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+    </button>
+  </ion-nav-buttons>
   <ion-content class="has-header">
     <div class="list card">
       <div class="item item-avatar">
@@ -7,15 +11,14 @@
           <p>{{product.dsc}}</p>
       </div>
       <div class="item item-divider">
+        <div class="row row-center button-bar">
+          <a class="button icon ion-plus-round royal" ng-click="addOne(product);"></a>
+          <a class="button text-center">Qty: {{product.qty}}</a>
+          <a class="button icon ion-minus-round royal" ng-click="minusOne(product);"></a>
+        </div>
         <div class="row row-center">
-          <div class="col col-10">
-            <a class="button icon ion-plus-round royal" ng-click="addOne(product);"></a>
-          </div>
-          <div class="col col-center">
-            <h4 class="text-center">Qty: {{product.qty}}</h4>
-          </div>
-          <div class="col col-10">
-            <a class="button icon ion-minus-round royal" ng-click="minusOne(product);"></a>
+          <div class="col">
+            <h2>UPC: {{product.upc}}</h2>
           </div>
         </div>
 
@@ -26,17 +29,10 @@
       </div>
 
       <div class="item item-divider">
-        <div class="row row-center">
-          <div class="col col-10"></div>
-          <div class="col col-center">
-            <a class="button button-outline button-royal icon-left ion-edit" ng-href="#/app/product/edit/{{product.$id}}">Edit Item</a>
-          </div>
-          <div class="col col-center">
-            <button class="button button-outline button-assertive icon-left ion-close-circled" ng-click="deleteProduct(product)">Remove Item</button>
-          </div>
-          <div class="col col-10"></div>
+        <div class="row row-center button-bar">
+            <a class="button button-clear button-royal icon-left ion-edit" ng-href="#/app/product/edit/{{product.$id}}">Edit Item</a>
+            <a class="button button-clear button-assertive icon-left ion-close-circled" ng-click="deleteProduct(product)">Remove Item</a>
         </div>
-
       </div>
 
     </div>

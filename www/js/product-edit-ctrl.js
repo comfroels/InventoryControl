@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('inventoryControl.productEdit', [])
-.controller('ProductEditCtrl', function($scope, $stateParams, ProductSvc, $state){
+.controller('ProductEditCtrl', function($scope, $stateParams, ProductSvc, $state, $cordovaBarcodeScanner){
   var products = ProductSvc.getProducts();
 
   products.$loaded().then(function(x){
@@ -12,4 +12,13 @@ angular.module('inventoryControl.productEdit', [])
     products.$save($scope.product);
     $state.go('app.inventory');
   }
+
+  document.addEventListener("deviceready", function(){
+    $scope.scanMe = function(){
+      $cordovaBarcodeScanner.scan()
+      .then(function(response){
+        $scope.product.upc = response.text;
+      });
+    }
+  });
 });

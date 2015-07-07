@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.inventorycontrol204318" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>inventoryControl</name>
+  <name>InventorIt</name>
   <description>
-        An Ionic Framework and Cordova project.
+        Real-time Inventory App
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+  <author email="comfroels@gmail.com" href="http://comfroels.com/">
+      Nathan White
     </author>
   <content src="index.html"/>
   <access origin="*"/>
